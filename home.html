@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+    <title>Wake Up</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Alarm Settings</h1>
+    <form method="post">
+        <input 
+            type="time" 
+            name="time" 
+            value="{{ time }}"
+        >
+        <input 
+            type="checkbox" 
+            name="on" 
+            {% if on %} checked {% endif %}
+        >
+        <input type="submit">
+    </form>
+</body>
