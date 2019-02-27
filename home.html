@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <head>
-    <title>Wake Up</title>
+    <title>iWakeUp</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Convergence" rel="stylesheet"> 
 </head>
 <body>
-    <h1>Alarm Settings</h1>
-    <form method="post">
-        <input 
-            type="time" 
-            name="time" 
-            value="{{ time }}"
-        >
-        <input 
-            type="checkbox" 
-            name="on" 
-            {% if on %} checked {% endif %}
-        >
-        <input type="submit">
-    </form>
+    <div class="panel">
+        <h1>iWakeUp</h1>
+        <form method="post">
+            <input 
+                type="time" 
+                name="time" 
+                value="{{ time }}"
+            >
+
+            <input 
+                type="checkbox" 
+                name="on"
+                id="switch" 
+                {% if on %} checked {% endif %}
+            />
+            <label for="switch">Toggle</label>
+            <input type="submit" value="Update Alarm">
+        </form>
+    </div>
 </body>
