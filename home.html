@@ -3,17 +3,17 @@
     <title>iWakeUp</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Convergence" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-nn4HPE8lTHyVtfCBi5yW9d20FjT8BJwUXyWZT9InLYax14RDjBj46LmSztkmNP9w" crossorigin="anonymous">
 </head>
 <body>
     <div class="panel">
         <h1>iWakeUp</h1>
-        <form method="post">
+        <form method="post" id="alarm-form">
             <input 
                 type="time" 
                 name="time" 
                 value="{{ time }}"
             >
-
             <input 
                 type="checkbox" 
                 name="on"
@@ -21,7 +21,7 @@
                 {% if on %} checked {% endif %}
             />
             <label for="switch">Toggle</label>
-            <input type="submit" value="Update Alarm">
+            <a class="submit" onclick="document.getElementById('alarm-form').submit()" href="#">Update Alarm</a>
         </form>
     </div>
 </body>
