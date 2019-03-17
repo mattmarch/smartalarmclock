@@ -1,4 +1,5 @@
 import os
+import time
 import dotenv
 import requests
 
@@ -11,14 +12,28 @@ headers = {
     "Authorization": "Bearer %s" % API_TOKEN,
 }
 
+
 def list_lights():
     response = requests.get(f'{API_URL}/lights/all', headers=headers)
     return response
+
 
 def set_lights(brightness):
     payload = {'power': 'on', 'brightness': brightness}
     response = requests.put(f'{API_URL}/lights/all/state', data=payload, headers=headers)
     return response
 
+
+def ramp_on(time_to_on, time_step=5):
+    total_steps = int(time_to_on / time_step)
+    brightness = 0
+    set_lights(brightness)
+    brightness_delta = 1 / total_steps
+    for _ in range(total_steps):
+        time.sleep(time_step)
+        brightness += brightness_delta
+        set_lights(brightness)
+
+
 if __name__ == '__main__':
-    print(set_lights(1).text)
+    ramp_on(30)
