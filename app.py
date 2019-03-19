@@ -1,7 +1,7 @@
 from flask import (
     Flask, request, redirect, render_template, Blueprint, url_for
 )
-import datetime
+import datetime, dateutil.parser
 
 import alarm_scheduler
 from AlarmState import AlarmState
@@ -19,9 +19,9 @@ def home():
 
 @app.route('/', methods=['POST'])
 def update_alarm():
-    time = request.form['time']
+    iso_time = request.form['time']
     is_on = 'on' in request.form
-    alarm_time = datetime.time.fromisoformat(time)
+    alarm_time = dateutil.parser.parse(iso_time)
     alarm_scheduler.update_job(is_on, alarm_time)
     
     return redirect('/')
