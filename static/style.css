@@ -8,9 +8,9 @@ html {
 
     --item-margin: 20px;
 
-    --toggle-width: 60px;
-    --toggle-height:30px;
-    --toggle-diameter: 24px;
+    --toggle-width: 80px;
+    --toggle-height:40px;
+    --toggle-diameter: 32px;
     --toggle-padding: calc((var(--toggle-height) - var(--toggle-diameter))/2);
 
     height: 100%;
@@ -20,6 +20,7 @@ h1 {
     color: var(--off-white);
     font-family: 'Convergence', sans-serif;
     text-align: center;
+    font-size: 48pt;
 }
 
 body {
@@ -40,7 +41,7 @@ body {
     padding: 30px;
     border-radius: 3px;
     min-height: 30%;
-    min-width: 200px;
+    min-width: 30%;
 }
 
 form {
@@ -53,11 +54,11 @@ form {
 
 input[type=time]{
     margin: var(--item-margin);
+    font-size: 18pt;
 }
 
-
 /* Submit Button */
-a.submit{
+a.submit {
     display:inline-block;
     padding:0.35em 1.2em;
     border:0.1em solid #FFFFFF;
@@ -67,6 +68,7 @@ a.submit{
     text-decoration:none;
     font-family:'Roboto',sans-serif;
     font-weight:300;
+    font-size: 18pt;
     color:#FFFFFF;
     text-align:center;
     transition: all 0.2s;
