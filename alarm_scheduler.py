@@ -8,13 +8,15 @@ from AlarmState import AlarmState
 JOB_COMMENT = 'Scheduled Wake Up'
 WAKE_UP_SCRIPT_NAME = 'wake_up.py'
 VENV_PYTHON = 'venv/bin/python'
+LOG_FILE = 'alarmCronLog.txt'
 
 
 def get_cron_command():
     current_dir_path = sys.path[0]
     script_path = os.path.join(current_dir_path, WAKE_UP_SCRIPT_NAME)
     python_path = os.path.join(current_dir_path, VENV_PYTHON)
-    return f'{python_path} {script_path} >> {current_dir_path}/alarmCronLog.txt'
+    log_path = os.path.join(current_dir_path, LOG_FILE)
+    return f'{python_path} {script_path} >> {log_path}'
 
 
 def update_job(enabled: bool, time: datetime.time):
