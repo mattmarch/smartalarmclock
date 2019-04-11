@@ -2,9 +2,14 @@ from flask import (
     Flask, request, redirect, render_template, Blueprint, url_for
 )
 import datetime, dateutil.parser
+import os, dotenv
 
 import alarm_scheduler
 from AlarmState import AlarmState
+
+dotenv.load_dotenv()
+FLASK_PORT = os.getenv('FLASK_PORT')
+FLASK_HOST = os.getenv('FLASK_HOST')
 
 app = Flask(__name__, template_folder='.')
 
@@ -27,4 +32,4 @@ def update_alarm():
     return redirect('/')
 
 if __name__ == '__main__':
-    app.run(port=5005, host='0.0.0.0')
+    app.run(port=FLASK_PORT, host=FLASK_HOST)
