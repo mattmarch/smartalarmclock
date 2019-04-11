@@ -21,7 +21,7 @@ def home():
 def update_alarm():
     iso_time = request.form['time']
     is_on = 'on' in request.form
-    alarm_time = dateutil.parser.parse(iso_time)
+    alarm_time = dateutil.parser.parse(iso_time).time()
     alarm_scheduler.update_job(is_on, alarm_time)
     
     return redirect('/')
