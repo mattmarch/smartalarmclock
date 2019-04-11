@@ -6,7 +6,7 @@ The idea is to have a cron job which slowly turns on a LIFX smart bulb in the mo
 
 
 ## Requirements
-- Python 3.5
+- Python 3.6
 - virtualenv (`pip install virtualenv`)
 
 
