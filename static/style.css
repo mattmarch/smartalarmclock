@@ -30,7 +30,7 @@ p {
 }
 
 body {
-    background: url(sunrise.jpg) no-repeat center center fixed;
+    background: url(sunrise_medium.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -40,6 +40,18 @@ body {
     display: flex;
     align-items:center;
     justify-content: center;
+}
+
+@media (min-width: 1000px) and (max-width: 2000px) {
+    body {
+        background: url(sunrise_large.jpg) no-repeat center center fixed;
+    }
+}
+
+@media (min-width: 2000px) {
+    body {
+        background: url(sunrise.jpg) no-repeat center center fixed;
+    }
 }
 
 .panel {
