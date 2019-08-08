@@ -23,6 +23,12 @@ h1 {
     font-size: 48pt;
 }
 
+p {
+    color: var(--grey);
+    font-family: 'Roboto', sans-serif;
+    font-size: 14pt;
+}
+
 body {
     background: url(sunrise.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;

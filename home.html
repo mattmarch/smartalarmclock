@@ -20,6 +20,7 @@
                 {% if on %} checked {% endif %}
             />
             <label for="switch">Toggle</label>
+            <p>The alarm is currently set to {{ time }} and turned {% if on %} on {% else %} off {% endif %}</p>
             <a class="submit" onclick="document.getElementById('alarm-form').submit()" href="#">Update Alarm</a>
         </form>
     </div>
